@@ -1,0 +1,168 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* === TITLE === */
+h1 {
+  margin-top: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #00fff2;
+  text-shadow: 0 0 20px #00fff2, 0 0 40px #00fff2;
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2;
+  }
+  to {
+    text-shadow: 0 0 20px #00fff2, 0 0 50px #00fff2;
+  }
+}
+
+/* === GAME CONTAINER === */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 18vmin);
+  grid-template-rows: repeat(3, 18vmin);
+  gap: 1.5vmin;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 2rem;
+  padding: 2vmin;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3),
+              inset 0 0 10px rgba(0, 255, 255, 0.2);
+  animation: boardGlow 3s infinite alternate;
+}
+
+@keyframes boardGlow {
+  from {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2),
+                inset 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  to {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.6),
+                inset 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+}
+
+/* === BOXES === */
+.box {
+  border: none;
+  border-radius: 1rem;
+  font-size: 8vmin;
+  font-weight: bold;
+  color: #00fff2;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.box:hover:not(:disabled) {
+  transform: scale(1.1);
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.box:active {
+  transform: scale(0.95);
+}
+
+.box:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+/* === BUTTONS === */
+#reset-btn,
+#new-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  margin: 0.8rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+#reset-btn:hover,
+#new-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+#reset-btn:active,
+#new-btn:active {
+  transform: scale(0.95);
+}
+
+/* === MESSAGE CONTAINER === */
+.msg-container {
+  position: fixed; /* ✅ Always visible in screen center */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 32, 47, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 999;
+}
+
+#msg {
+  font-size: 5vmin;
+  color: #00fff2;
+  font-weight: 700;
+  text-shadow: 0 0 20px #00fff2, 0 0 40px #00fff2;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 20px #00fff2;
+  }
+  to {
+    text-shadow: 0 0 40px #00fff2, 0 0 60px #00fff2;
+  }
+}
+
+/* === HIDE === */
+.hide {
+  display: none;
+}
+
+
+
