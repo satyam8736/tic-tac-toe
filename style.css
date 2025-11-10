@@ -180,6 +180,93 @@ h1 {
 .msg-container { transition: opacity .25s ease; }
 .scoreboard { display:flex; gap:12px; justify-content:center; margin:8px 0; }
 
+/* === RESPONSIVE FIX for mobile === */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game {
+    grid-template-columns: repeat(3, 24vw);
+    grid-template-rows: repeat(3, 24vw);
+    gap: 2vw;
+    padding: 4vw;
+  }
+
+  .box {
+    font-size: 9vw;
+  }
+
+  .toolbar, .scoreboard {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #reset-btn, #new-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  #msg {
+    font-size: 6vw;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .msg-container {
+    padding: 1rem;
+  }
+}
+
+/* === Stylish Player Mode Dropdown === */
+#modeSelect {
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid #00fff2;
+  border-radius: 8px;
+  color: #00fff2;
+  font-weight: 600;
+  padding: 8px 16px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px #00fff2;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#modeSelect:hover {
+  background: rgba(0, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+#modeSelect option {
+  background-color: #0f2027;
+  color: #00fff2;
+}
+
+/* === Undo Button Styling === */
+#undo-btn {
+  background: linear-gradient(90deg, #00ffa3, #00bfff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+#undo-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+#undo-btn:active {
+  transform: scale(0.95);
+}
+
+
+
 
 
 
