@@ -47,15 +47,20 @@ h1 {
 
 .game {
   display: grid;
-  grid-template-columns: repeat(3, 18vmin);
-  grid-template-rows: repeat(3, 18vmin);
-  gap: 1.5vmin;
-  background: rgba(255, 255, 255, 0.08);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 94vw;
+  max-width: 380px;
+  aspect-ratio: 1/1;
+  margin: 1rem auto;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(12px);
   border-radius: 2rem;
-  padding: 2vmin;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3),
-              inset 0 0 10px rgba(0, 255, 255, 0.2);
+  padding: 2vw;
+  box-shadow: 0 0 25px rgba(0,255,255,0.3),
+              inset 0 0 10px rgba(0,255,255,0.2);
   animation: boardGlow 3s infinite alternate;
 }
 
@@ -72,15 +77,22 @@ h1 {
 
 /* === BOXES === */
 .box {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  font-size: clamp(1.8rem, 10vw, 3.2rem);
   border: none;
   border-radius: 1rem;
-  font-size: 8vmin;
   font-weight: bold;
   color: #00fff2;
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.23s;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  user-select: none;
 }
 
 .box:hover:not(:disabled) {
@@ -393,6 +405,7 @@ html, body {
     min-height: 0;
   }
 }
+
 
 
 
