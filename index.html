@@ -26,9 +26,21 @@
                 <button class="box"></button>
                 <button class="box"></button>
             </div>
+            <div class="toolbar" style="display:flex; gap:8px; justify-content:center; margin:8px 0;">
+  <select id="modeSelect">
+    <option value="pvp">2 Players</option>
+    <option value="ai">Vs AI</option>
+  </select>
+  <button id="undo-btn">Undo</button>
+</div>
+<div class="scoreboard">
+  X: <b id="scoreX">0</b> | O: <b id="scoreO">0</b> | Draw: <b id="scoreDraw">0</b>
+</div>
+
         </div>
         <button id="reset-btn">RESET GAME</button>
     </main>
     <script src="app.js"></script>
 </body>
 </html>
+
