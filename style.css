@@ -164,5 +164,22 @@ h1 {
   display: none;
 }
 
+.box {
+  transition: transform .08s ease, background .2s ease, box-shadow .2s;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+.box:active { transform: scale(0.96); }
+.box.last-move { outline: 2px solid #00b7ff; }
+.box.win { background: #c8f7c5 !important; animation: glow 1s ease-in-out 2; }
+@keyframes glow {
+  0% { box-shadow: 0 0 0px #8bc34a; }
+  50% { box-shadow: 0 0 16px #8bc34a; }
+  100% { box-shadow: 0 0 0px #8bc34a; }
+}
+.msg-container { transition: opacity .25s ease; }
+.scoreboard { display:flex; gap:12px; justify-content:center; margin:8px 0; }
+
+
 
 
